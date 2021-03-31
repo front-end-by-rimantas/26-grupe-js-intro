@@ -12,6 +12,10 @@ Palyginimo operatoriai:
 - naudotini: <, >, <=, >=, ===, !==
 - nenaudotini: ==, !=   nes netikrina, ar suderinami tipai
 
+Grazinamos reiksmes:
+true (boolean)
+false (boolean)
+
 */
 
 const a = 8;
@@ -61,4 +65,57 @@ if (akys === 'melynos') {
     console.log('programeris 🥳🥳🥳');
 } else {
     console.log('Sorry, negaliu pagirti, nes nezinau tokios spalvos...');
+}
+
+console.log('----------------------');
+
+// logikos nestinimas - logikos strukturos rasymas viduje (neribotai)
+
+const city = 'arstrdt';
+
+if (city === 'Vilnius') {
+    console.log('Sveiki atvyke i Vilniu ;)');
+} else {
+
+    if (city === 'Kaunas') {
+        console.log('Sveiki atvyke i Kauna ;)');
+    } else {
+
+        if (city === 'Siauliai') {
+            console.log('Sveiki atvyke i Siaulius ;)');
+        } else {
+
+            if (city === 'Beduonė') {
+                console.log('Sveiki atvyke i Siaulius ;)');
+            } else {
+                console.log('Sveiki atvyke i kazkoki nezinoma miesta!');
+            }
+        }
+    }
+}
+
+
+
+console.log('----------------------');
+
+/* 
+
+jei duosim:
+- teigiama arba neigiama skaiciu - true;
+- Infinity arba -Infinity - true;
+- nuli - false;
+- NaN - false;
+- tuscias tekstas - false;
+- ne tuscias tekstas - true;
+- bet koks array - true;
+- undefined - false;
+
+*/
+
+const arMokausi = true;
+
+if (arMokausi) {
+    console.log('Taip ir toliau!');
+} else {
+    console.log('Pailseti irgi reikia.... 🎃');
 }
