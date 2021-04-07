@@ -24,10 +24,17 @@ function letters(text, step) {
     // logic
     let result = '';
 
-    for (let i = step - 1; i < text.length; i += step) {
-        result += text[i];
+    if (step > 0) {
+        for (let i = step - 1; i < text.length; i += step) {
+            result += text[i];
+        }
+    } else {
+        for (let i = text.length + step; i >= 0; i += step) {
+            result += text[i];
+        }
     }
 
+    // alternativi versija (nuo 0 iki galo)
     // for (let i = 0; i < text.length; i++) {
     //     if (i % step === step - 1) {
     //         result += text[i];
@@ -35,6 +42,10 @@ function letters(text, step) {
     // }
 
     // post logic validation
+    if (result === '') {
+        console.error('ERROR: sveikinu, tu sugebejimai sugalvoti testa, kuris teoriskai, algoritmo rasymo metu, buvo neimanomas 😅');
+        return false;
+    }
 
     // result return
     return result;
@@ -49,12 +60,11 @@ console.log(letters('abc', 4));
 console.log(letters('abc', 0));
 console.log(letters('abc', 1.5));
 
-// console.log(letters('abcdefg', -2), '->', 'fdb');
-// console.log(letters('abcdefghijkl', -3), '->', 'jgda');
-
 console.log(letters('abcdefg', 2), '->', 'bdf');
 console.log(letters('abcdefghijkl', 3), '->', 'cfil');
 
+console.log(letters('abcdefg', -2), '->', 'fdb');
+console.log(letters('abcdefghijkl', -3), '->', 'jgda');
 
 
 /*
