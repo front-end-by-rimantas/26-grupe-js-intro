@@ -1,8 +1,8 @@
 /*
-Reikia rasti kas gymineje vyriausias
+Reikia rasti kas gimineje vyriausias
 */
 
-const gymine = [
+const gimine = [
     {
         name: 'Petras',
         age: 50,
@@ -72,4 +72,4 @@ const oldest = (list) => {
     };
 }
 
-console.log(oldest(gymine));
+console.log(oldest(gimine));
