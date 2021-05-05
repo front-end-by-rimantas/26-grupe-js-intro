@@ -49,21 +49,27 @@ const gymine = [
 
 const oldest = (list) => {
     let oldestAge = -Infinity;
+    let oldestName = '';
 
     for (const person of list) {
         if (person.age > oldestAge) {
             oldestAge = person.age;
+            oldestName = person.name;
         }
 
         if (person.children) {
-            const oldestChildAge = oldest(person.children);
-            if (oldestChildAge > oldestAge) {
-                oldestAge = oldestChildAge;
+            const oldestChild = oldest(person.children);
+            if (oldestChild.age > oldestAge) {
+                oldestAge = oldestChild.age;
+                oldestName = oldestChild.name;
             }
         }
     }
 
-    return oldestAge;
+    return {
+        name: oldestName,
+        age: oldestAge
+    };
 }
 
 console.log(oldest(gymine));
